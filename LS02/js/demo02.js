@@ -14,8 +14,9 @@
 }());
 
 //思考 a和b分配在那个区:
-var a = 23;//window.a
-var b = 34;//window.b
+var a = 23;//window.a  答：栈区
+var b = 34;//window.b  答：栈区
+
 
 
 

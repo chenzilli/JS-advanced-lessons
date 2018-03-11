@@ -9,6 +9,7 @@ var str = "abc_def_ghi_jkl_mn";
 
 //转义字符 \n \" \' \\
 console.log("abc\ndefghi\\\n\'mn\'");
+//答：abc，defghi\，'mn'
 
 //字符串常用操作
 var str = "abc_def_ghi_jkl_mn";
