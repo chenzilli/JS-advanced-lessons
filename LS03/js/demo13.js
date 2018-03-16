@@ -11,25 +11,38 @@ Number.POSITIVE_INFINITY
 //Number原型方法(Number对象继承的方法）
 // Number.prototype.toFixed();
 // Number.prototype.toPrecision();
-// Number.prototype.toString();
+// Number.pro+
 // Number.prototype.toExponential();
 
 var n1 = 12345.6789;
 console.log(n1.toFixed(2));
+//答：12345.68
 console.log(n1.toPrecision(2));
+//答：1.2e+4
 console.log(n1.toString());
+//答：12345.6789
 console.log(n1.toExponential(2));
+//答：1.23e+4
 
 //
 console.log(NaN === NaN);
+//答：false
 console.log(isNaN("12,3"));
+//答：true
 console.log(Math.floor(3.8));
+//答：3
 console.log(Math.floor(-3.8));
+//答：-4
 console.log(Math.ceil(3.2));
+//答：4
 console.log(Math.ceil(-3.2));
+//答：-3
 console.log(Math.round(-3.2));
+//答：-3
 console.log(Math.round(-3.5));
+//答：-3
 console.log(Math.round(-3.8));
+//答：-4
 
 //其余部分参见《深入理解JS》第11章
 
