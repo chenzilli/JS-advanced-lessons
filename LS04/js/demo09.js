@@ -16,7 +16,8 @@ switch(i){
     default:
         console.log("default");
 }
-
+//case 1
+//case 2
 
 // 利用switch的穿透性:求某月某日是一年中的第几天?
 var year = 2017,
@@ -50,3 +51,4 @@ switch(month-1){
         sum += date;
 }
 console.log(sum);
+//140

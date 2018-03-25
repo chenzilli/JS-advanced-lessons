@@ -8,6 +8,8 @@ var arr = [2,,"33"];
 for(var i in arr){
     console.log(i,arr[i]);
 }
+//0 2
+//2 33
 
 //for ... in 遍历对象
 var obj = {x:10,y:20,z:"30"};
@@ -22,4 +24,11 @@ obj2.z = 3;
 for(var k in obj2){
     console.log(k,obj2[k]);
 }
-
+/*
+x 10 number
+3 y 20 number
+3 z 30 string
+11 y 2
+11 z 3
+11 x 1
+*/

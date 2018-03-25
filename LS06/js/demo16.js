@@ -11,6 +11,6 @@ if(score>90){
 }else{
     console.log("不及格");
 }
-
+//良
 //通过&&和||的组合实现如上功能，注：小括号优先级最高
-console.log((score>90&&"优")||(score>75&&"良")||(score>60&&"及格")||"不及格");
+//console.log((score>90&&"优")||(score>75&&"良")||(score>60&&"及格")||"不及格");

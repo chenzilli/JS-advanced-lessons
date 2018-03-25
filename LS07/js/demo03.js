@@ -11,7 +11,8 @@ function test() {
     }
     return s;
 }
-test("hello,", "world!");//"hello,world!"
+test("hello,", "world!");
+//"hello,world!"
 
 
 //实参数小于形参数
@@ -20,6 +21,6 @@ var sum = function(a,b,c){
     c = c||5;
     return a+b+c;
 };
-console.log(sum(1,2,3));
-console.log(sum(1,2));
-console.log(sum(1));
+console.log(sum(1,2,3));//6
+console.log(sum(1,2));//8
+console.log(sum(1));//10

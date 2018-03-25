@@ -5,11 +5,11 @@
 //Part1
 var a = [1,2,3];
 var b = a;
-console.log(a,b);
+console.log(a,b);//[1,2,3],[1,2,3]
 b.pop();
-console.log(a,b);
+console.log(a,b);//[1,2],[1,2]
 b = [4,5,6];
-console.log(a,b);
+console.log(a,b);//[1,2],[4,5,6]
 
 //Part2
 function foo(x) {
@@ -20,7 +20,7 @@ function foo(x) {
 }
 var a = [1,2,3];
 foo(a);
-console.log(a);
+console.log(a);//[1,2,3,4]
 
 //Part3
 function foo(x) {
@@ -32,7 +32,7 @@ function foo(x) {
 }
 var a = [1,2,3];
 foo(a);
-console.log(a);
+console.log(a);//[5,6,7,8]
 
 
 

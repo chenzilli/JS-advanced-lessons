@@ -6,9 +6,9 @@ var sum = function(a,b,c){
     c = c||5;
     return a+b+c;
 };
-console.log(sum(1,2,3));
-console.log(sum(1,2));
-console.log(sum(1));
+console.log(sum(1,2,3));//6
+console.log(sum(1,2));//8
+console.log(sum(1));//10
 // console.log(sum(1,0,0));
 
 //优化改造版本
@@ -17,7 +17,7 @@ var sum = function(a,b,c){
     if(c!=false){c = c||5;}//(c!=false)&&(c=c||5);
     return a+b+c;
 };
-console.log(sum(1,2,3));
-console.log(sum(1,2));
-console.log(sum(1));
-console.log(sum(1,0,0));
+console.log(sum(1,2,3));//6
+console.log(sum(1,2));//8
+console.log(sum(1));//10
+console.log(sum(1,0,0));//1

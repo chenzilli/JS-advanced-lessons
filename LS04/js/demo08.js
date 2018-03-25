@@ -45,7 +45,7 @@ switch (j){
     default:
         console.log("case_default");
 }
-
+//case_default
 
 // 在switch语句中使用表达式，如下
 var i = 65;
@@ -59,3 +59,4 @@ switch(true){
     default:
         alert('default');
 }
+//及格

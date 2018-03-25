@@ -6,11 +6,8 @@
 function test() {
     console.log("this is",this);
 }
-test();//window
-
-
-
-
+test();
+//window
 
 //对象方法调用
 var obj = {
@@ -20,7 +17,8 @@ var obj = {
         console.log(this.x,this);
     }
 };
-obj.test();//调用对象的方法23
+obj.test();//调用对象的方法
+//23
 
 //给obj动态添加方法
 var sayHi = function () {
@@ -28,6 +26,7 @@ var sayHi = function () {
 };
 obj.sayHi = sayHi;//添加给对象添加方法
 obj.sayHi();
+//Hi，i'm obj
 
 /*
 //思考如下代码 详情参见高阶函数章节
@@ -39,14 +38,19 @@ var fun1 = function () {
 obj.fun3 = fun1;
 obj.fun4 = fun1();
 console.log(obj.fun3());//输出什么
+//f fun2() 
+    {
+        return this.x;
+    }
+//
 console.log(obj.fun3()());//输出什么
+//Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
 console.log(obj.fun4());//输出什么
+//{name: "obj", x: 23, test: ƒ, sayHi: ƒ, fun3: ƒ, …}
 */
 
 
-
-
-//Part 22222222222222222
+//Part 2
 //间接调用 实例一
 objA = {name:"AA"};
 objB = {name:"BB"};
@@ -75,9 +79,9 @@ var me = {
     name:"ABC"
 };
 
-bird.fly(5,6);
-fish.swim.call(me,3,4);
-bird.fly.call(me,7,8);
+bird.fly(5,6);//i'm:polly i can fly ___ 5 6
+fish.swim.call(me,3,4);//i'm ABC i cam swim ___ 3 4
+bird.fly.call(me,7,8);//i'm:ABC i can fly ___ 7 8
 //swim(1,2);与swim.call(null,1,2);相同
 
 
@@ -86,6 +90,7 @@ function test() {
     console.log(Array.prototype.slice.call(arguments));
 }
 test(1,2,3,"4",5);
+//(5)[1, 2, 3, "4", 5]
 
 
 
@@ -98,4 +103,5 @@ Person.prototype.sayHi = function(){
     console.log("Hi,i'm "+this.name);
 };
 var p1 = new Person("Jack");
-p1.sayHi();//Hi,i'm Jack
+p1.sayHi();
+//Hi,i'm Jack

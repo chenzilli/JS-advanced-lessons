@@ -6,13 +6,14 @@
 var str = "abc";
 var strDescriptor = Object.getOwnPropertyDescriptor(window,"str");
 console.log(strDescriptor);
+//{value: "abc", writable: true, enumerable: true, configurable: false}
 
 function  sloppyFunc() {
     str.length = 7;
     //console.log(Object.getOwnPropertyDescriptor(str,"length"));
-    console.log(str.length);//
+    console.log(str.length);
 }
-sloppyFunc();
+sloppyFunc();//3
 
 function  strictFunc() {
     'use strict';
@@ -49,5 +50,5 @@ function f(a){
     return [a, arguments[0]];
 }
 var pair = f(17);
-console.assert(pair[0] === 42);//console.log(pair[0]);
-console.assert(pair[1] === 17);//console.log(pair[1]);
+console.assert(pair[0] === 42);//console.log(pair[0]);//1
+console.assert(pair[1] === 17);//console.log(pair[1]);//1

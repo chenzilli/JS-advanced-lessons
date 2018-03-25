@@ -13,5 +13,5 @@ function  sloppyFunc() {
     //'use strict'
     sloppyVar = 123;
 }
-sloppyFunc();
+sloppyFunc();//123
 console.log(sloppyVar);
