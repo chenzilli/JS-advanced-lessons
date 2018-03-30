@@ -5,11 +5,13 @@
 //函数对象属性之arguments 实参集合（类似数组的一个对象）
 var foo = function (a,b){
     console.log(arguments);//类似数组的一个对象
-
+    //[1,2,3,4]
     console.log(foo.arguments.length);
+    //4
     // console.log(arguments.length);
     var args = Array.prototype.splice.call(arguments,0);
     console.log(args);
+    //[1,2,3,4]
 };
 foo(1,2,3,4);
 
@@ -61,8 +63,8 @@ var obj = {
         this.foo1();
     }
 };
-obj.foo1();
-obj.foo2();
+obj.foo1();//null
+obj.foo2();//function abc()
 
 
 
@@ -75,7 +77,7 @@ var func = function(n){
         return n * func(n - 1);
         //return n * arguments.callee(n - 1);
 };
-console.log(func(4));
+console.log(func(4));24
 
 //优点，可以是匿名函数
 (function(n){
@@ -114,7 +116,7 @@ Man.prototype.sayHi = function () {
     console.log("Hi,i'm",this.name);
 };
 var li = new Man("Leo", 10);
-li.sayHi();//
+li.sayHi();//Hi,i'm Leo
 console.log(li.sex);//M
 
 Man.prototype.isStrong = true;
@@ -142,20 +144,20 @@ var bird = {
 var me = {
     name:"ABC"
 };
-swim(1,2);
-swim.call(me,3,4);
-bird.fly(5,6);
-bird.fly.call(me,7,8);
-bird.fly.apply(me,[7,8]);
+swim(1,2);//i'm: i can swim ___ 1 2
+swim.call(me,3,4);//i'm:ABC i can swim ___ 3 4
+bird.fly(5,6);//i'm:polly i can fly ___ 5 6
+bird.fly.call(me,7,8);//i'm:ABC i can fly ___ 7 8
+bird.fly.apply(me,[7,8]);//i'm:ABC i can fly ___ 7 8
 //swim(1,2);与swim.call(null,1,2);相同同
 
 
 //函数对象方法之 apply
 //functionName.apply([thisObj[,argArray]])
 //与call方法不同的地方是，apply的第二个参数类型必须是Array
-swim.apply(me,[9,10]);
-bird.fly.apply(me,[11,12]);
-swim.apply(null,[13,14]);//同swim(13,14)
+swim.apply(me,[9,10]);//i'm:ABC i can swim ___ 9 10
+bird.fly.apply(me,[11,12]);//i'm:ABC i can fly ___ 11 12
+swim.apply(null,[13,14]);//同swim(13,14)//i'm: i can swim ___ 13 14
 
 
 
@@ -187,9 +189,7 @@ console.log(result);//true
 // 该绑定函数将 bind 方法中指定的参数用作第一个参数和第二个参数。
 // 在调用该绑定函数时，指定的任何参数将用作第三个、第四个参数（依此类推）
 // Define the original function with four parameters.
-var displayArgs = function (val1, val2, val3, val4) {
-    console.log(val1 + " " + val2 + " " + val3 + " " + val4);
-};
+
 var emptyObject = {};
 // Create a new function that uses the 12 and "a" parameters
 // as the first and second parameters.
@@ -206,13 +206,13 @@ displayArgs2("b", "c");// Output: 12 a b c
 var foo = function () {
     console.log("foo");
 };
-console.log(foo.toString()," ___ ",typeof foo.toString());
-console.log(foo.valueOf()," ___ ",typeof foo.valueOf());
+console.log(foo.toString()," ___ ",typeof foo.toString());//function(){console.lob("foo");}"_"function
+console.log(foo.valueOf()," ___ ",typeof foo.valueOf());////f(){console.lob("foo");}"_"function
 
-console.log(foo.hasOwnProperty("toString"));
-console.log(Object.prototype.hasOwnProperty("toString"));
+console.log(foo.hasOwnProperty("toString"));//false
+console.log(Object.prototype.hasOwnProperty("toString"));//true
 
-console.log(foo.hasOwnProperty("valueOf"));
-console.log(Object.prototype.hasOwnProperty("valueOf"));
+console.log(foo.hasOwnProperty("valueOf"));//false
+console.log(Object.prototype.hasOwnProperty("valueOf"));//true
 //关于toString与valueOf的详细内容参见JS对象相关章节
 

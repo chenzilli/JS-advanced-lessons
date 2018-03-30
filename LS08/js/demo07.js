@@ -11,6 +11,7 @@ function add(x, y, f) {
 add(2,3,function(x){return x+1;});//
 add(2,-3,Math.abs);//
 add(2,3,Math.sqrt);//2的开平方加3的开平方
+//3.1462643699419726
 
 //实例一  高阶函数一般应用 02
 var word_2 = "do another thing.";
@@ -19,8 +20,8 @@ var function_1=function(callback){
     console.log(this.word_1);
     (callback && typeof(callback) === "function") && callback();
 };
-var function_2=function(){console.log(this.word_2)};
-function_1(function_2);
+var function_2=function(){console.log(this.word_2)};//do something.
+function_1(function_2);//do another thing.
 
 
 // 实例二 数组相关的高阶函数 map reduce filter sort详情参见数组章节
@@ -38,6 +39,7 @@ var result = ["1", "2", "3"].map(function(val) {
 for (var i=0;i<result.length;i++){
     console.log(typeof result[i]);
 }
+//number number number
 
 //reduce 相当于 [x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4)
 var arr = [1, 3, 5, 7, 9];
@@ -105,6 +107,6 @@ var fun1 = function () {
 };
 obj.fun3 = fun1;
 obj.fun4 = fun1();
-console.log(obj.fun3());//输出什么
-console.log(obj.fun3()());//输出什么
-console.log(obj.fun4());//输出什么
+console.log(obj.fun3());//输出什么//f fun2() {return this.x;//若改为 return this;}
+console.log(obj.fun3()());//输出什么//23
+console.log(obj.fun4());//输出什么//一秒一个Hi

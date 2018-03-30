@@ -10,6 +10,8 @@ function foo(){
     var j = 10;
     console.log("j:",j);//10
 }
+
+
 foo();
 
 console.log("i:",i);//0
