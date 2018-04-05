@@ -50,6 +50,14 @@ function goToStore_B(){
 goToStore_A();//设置断点
 // goToStore_B();//设置断点
 console.log("全局上下文-end");//设置断点
-
+/*
+全局上下文-start
+goToStore_A 上下文-start
+goToBank_C 上下文-start
+家中环境-文具店A环境-银行C环境-
+goToBank_C 上下文-end
+goToStore_A 上下文-end
+全局上下文-end
+*/
 
 

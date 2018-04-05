@@ -18,6 +18,8 @@ function fn() {
     bar();
 }
 fn();
+//100 20 200 600
+
 //console.log(a,b,c,d);
 
 

@@ -20,3 +20,12 @@ function foo(){
 }
 foo();//设置断点
 console.log("全局上下文-end");//设置断点
+/*
+全局上下文-start
+foo上下文-start
+bar上下文-start
+6
+bar上下文-end
+foo上下文-end
+全局上下文-end
+*/

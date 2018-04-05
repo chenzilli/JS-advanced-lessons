@@ -8,6 +8,7 @@ function echo() {
     console.log(name);
 }
 echo();
+//Jack
 
 
 //词法作用域 与调用形式无关 实例一
@@ -20,6 +21,7 @@ function foo() {
     echo();
 }
 foo();//Bill or Jack
+//Jack
 
 
 
@@ -37,3 +39,4 @@ function foo() {
     fee();
 }
 foo();//Bill or Jack
+//Jack
