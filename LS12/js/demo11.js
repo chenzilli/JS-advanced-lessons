@@ -9,8 +9,8 @@ function foo() {
     }
     return bar();
 }
-foo();
-foo();
+foo();//1
+foo();//1
 */
 
 // 例一
@@ -37,5 +37,6 @@ function checkScope() {
     return f;
 }
 checkScope()();//输出什么
+//"local scope"
 */
 //查看JavaScript权威指南（第6版）184页中的描述

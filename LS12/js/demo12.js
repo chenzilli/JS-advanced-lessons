@@ -10,9 +10,9 @@ function foo(x) {
     }
 }
 var fee = foo(2); // fee 形成了一个闭包
-fee(10);//
-fee(10);//
-fee(10);//
+fee(10);//16
+fee(10);//17
+fee(10);//18
 
 //Part 2222222222222//////////////////
 function foo(x) {
@@ -24,9 +24,9 @@ function foo(x) {
 }
 var age = new Number(2);
 var bar = foo(age); //和相关作用域形成了一个闭包
-bar(10); //输出什么？
-bar(10); //输出什么？
-bar(10); //输出什么？
+bar(10); //输出什么？//15 1
+bar(10); //输出什么？//15 2
+bar(10); //输出什么？//15 3
 
 
 // Part 33333333333
@@ -43,3 +43,4 @@ function fn() {
 var f1 = fn();
 var max = 100;
 f1(15);
+//15

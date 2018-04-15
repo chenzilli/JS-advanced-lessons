@@ -9,8 +9,8 @@ function f1(){
     return f2;
 }
 var f = f1();
-f();//输出多少？
-f();//输出多少？
+f();//输出多少？//1000
+f();//输出多少？//1001
 
 
 // 闭包实例
@@ -28,9 +28,9 @@ function f1(){
     return f2;
 }
 var result=f1();
-result(); // 输出多少？
+result(); // 输出多少？//999
 nAdd();
-result(); // 输出多少？
+result(); // 输出多少？//1000
 
 
 ////////闭包 应用案例 实现数据的封装 私有属性
@@ -46,14 +46,14 @@ function Person(){
     }
 };
 var john = Person();
-console.log(john.getName());
+console.log(john.getName());//defalut
 john.setName("john");
-console.log(john.getName());
+console.log(john.getName());//john
 
 var jack = Person();
-console.log(jack.getName());
+console.log(jack.getName());//default
 jack.setName("jack");
-console.log(jack.getName());
+console.log(jack.getName());//jack
 
 /////
 var m = 10;
@@ -66,9 +66,9 @@ function f1(){
 }
 var result1=f1();
 var result2=f1();
-document.onclick = result1; // 输出多少？
+document.onclick = result1; // 输出多少？//10
 nAdd();
-result2(); // 输出多少
+result2(); // 输出多少//11
 
 
 //////
@@ -82,7 +82,7 @@ function f1(){
 }
 var result1=f1();
 var result2=f1();
-result1(); // 输出多少？
+result1(); // 输出多少？//10
 nAdd();
-result2(); // 输出多少
-result1();
+result2(); // 输出多少//11
+result1();//11

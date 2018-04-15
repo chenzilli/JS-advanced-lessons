@@ -25,4 +25,10 @@ window.onload = function () {
         }(i));
     }
 };
-
+//
+/*ƒ () {
+    var btns = document.getElementsByClassName("btn");
+    function closureExample(objID) {
+        var ol = document.getElementById(objID);
+        //var li = document.createElement("li");
+        */

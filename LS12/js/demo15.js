@@ -12,6 +12,7 @@ function fn() {
 };
 var f = fn();
 f();
+//<div></div>
 
 //////////定时与节点 闭包应用案例 0.5秒后执行，由于闭包所以objID此时还存在
 function closureExample(objID, text, timedelay) {
@@ -21,6 +22,7 @@ function closureExample(objID, text, timedelay) {
     }, timedelay);
 }
 closureExample("myDiv","Closure is Create", 500);
+//myDiv Closure is Create
 
 //////////闭包 应用案例
 var db = (function() {
@@ -55,7 +57,7 @@ var object = {
     }
 };
 console.log(object.getNameFunc()());
-
+//The Window
 // 实例二
 var name = "The Window";
 var object = {
@@ -68,7 +70,7 @@ var object = {
     }
 };
 console.log(object.getNameFunc()());
-
+//My Object
 
 // 实例三
 (function () {
@@ -84,5 +86,6 @@ console.log(object.getNameFunc()());
 }());
 f(100);
 g();
+//100
 
 
