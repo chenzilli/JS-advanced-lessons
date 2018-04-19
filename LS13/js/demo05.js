@@ -3,9 +3,9 @@
  */
 var obj = {};
 obj.x = 2;//直接添加属性
-console.log(obj.x);//通过.访问属性
+console.log(obj.x);//通过.访问属性//2
 obj.x = 5;//设置属性
-console.log(obj["x"]);//通过[]访问属性
+console.log(obj["x"]);//通过[]访问属性//5
 delete obj.x;//删除属性
 console.log(obj.x);
 
@@ -28,3 +28,6 @@ var obj4 = {};
 for(var i=0;i<10;i++){
     obj4[i] = i;
 }
+
+//[i:9]
+//[0:0 1:1 2;2 3:3 4:4 5:5 6:6 7:7 8:8 9:9]
