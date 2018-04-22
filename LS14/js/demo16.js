@@ -16,6 +16,7 @@ empty2 = Object.create({},{
     }
 });
 console.log(Object.isExtensible(empty2));
+//true
 
 
 //////////Object.isExtensible和Object.preventExtensions实例////////

@@ -18,6 +18,7 @@ Object.defineProperties(obj,{
         }
     }
 });
+//{_x: 1, y: 2, z: 2}
 
 
 //批量添加属性并设置属性特性 book实例
@@ -28,6 +29,7 @@ Object.defineProperties(book,{
     _year:{//(_year)前面的下划线表示只能通过对象方法访问的属性
         value:2004,
         writable:true //如果没写这一行会怎样？
+        //如果没写则_year数据为可读不可写
     },
     edition:{
         value:1,
@@ -50,6 +52,7 @@ Object.defineProperties(book,{
 });
 //测试
 book.year=2006;
+//2006
 
 
 //关于Object.create的第二个属性，思考x是empty自身属性还是obj2的自身属性？
@@ -57,5 +60,6 @@ var empty = {};
 var obj2 = Object.create(empty,{
    x:{value:1}, y:{value:2,enumerable:true}
 });
-console.log(obj2);
-console.log(obj2.hasOwnProperty("x"));
+console.log(obj2);//{y: 2, x: 1}
+console.log(obj2.hasOwnProperty("x"));//true
+//x是obj2的自身属性

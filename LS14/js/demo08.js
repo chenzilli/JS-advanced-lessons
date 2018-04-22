@@ -8,9 +8,19 @@ Object.defineProperty(person,"name",{
     enumerable:true,
     value:"Mike"
 });
-console.log(person.name);//输出什么？
+console.log(person.name);//输出什么？//Mike
 person.name = "Lucy";
-console.log(person.name);//输出什么？
+console.log(person.name);//输出什么？//Mike
 delete person.name;
-console.log(person.name);//输出什么？
+console.log(person.name);//输出什么？//Mike
 
+//将 writable:false改成 writable:true
+//输出结果：Mike Lucy Lucy
+
+
+//将configurable:false改成configurable:true
+//输出结果：Mike Mike undefined
+
+
+//将writable:false和configurable:false都改为true
+//输出结果：Mike Lucy

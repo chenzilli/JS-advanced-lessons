@@ -11,6 +11,11 @@ obj.z = 3;
 for(var k in obj){
     console.log(k,obj[k]);
 }
+/*
+x 1
+y 2
+z 3
+*/
 
 //Part 2222222222222222
 
@@ -26,6 +31,11 @@ Object.defineProperty(obj,"w",{value:456,configurable:true});//writable,enumerab
 for(var k in obj){
     console.log(k,obj[k]);
 }
+/*
+x 1
+y 2
+z 3
+*/
 //console.log(obj.w);//有w，但上边for...in遍历不到
 
 

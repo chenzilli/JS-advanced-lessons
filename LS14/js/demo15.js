@@ -15,16 +15,22 @@ Object.defineProperty(o3,"x",
     {configurable:true,enumerable:false,writable:true,value:"xxx"}
 );
 console.log(Object.keys(o3));//是否包含可枚举属性的键？
+//["y"]（包含可枚举属性的键，但不包括不可枚举）
 console.log(Object.getOwnPropertyNames(o3));//是否包含可枚举属性的键？
-
+//(2) ["y", "x"]（包含可枚举属性的键）
 console.log(o3.hasOwnProperty("x"));
+//true
 console.log(o3.propertyIsEnumerable("a"));
+//false
 
 for(var k in o3){ //遍历不到x属性
     console.log(k,o3[k]);
 }
+// y yyy
 console.log("x" in o3,"y" in o3);// in 和 for...in 的区别 关于可枚举属性特性
+//true true
 console.log(o3.hasOwnProperty("x"),o3.hasOwnProperty("y"));//是否关心可枚举
+//true true
 
 
 //遍历属性的综合实例
@@ -48,10 +54,17 @@ console.log(o5.propertyIsEnumerable("a"),
     o5.propertyIsEnumerable("c"),
     o5.propertyIsEnumerable("d")
 );//多少个true 多少个false
+/*
+o5 自有可遍历属性： c 234
+o5 非自有可遍历属性： a aaa
+*/
 console.log("a" in o5,"b" in o5,"c" in o5,"d" in o5);//多少个true 多少个false
+//false false true false
+//true true true true
 console.log(Object.keys(o5));//只显示自身可枚举的属性
+//["c"]
 console.log(Object.getOwnPropertyNames(o5));//返回一个数组，包含自身所有属性，包括不可枚举的属性
-
+//(2) ["c", "d"]
 //console.log(o4.isPrototypeOf(o5));
 
 

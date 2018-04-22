@@ -29,6 +29,6 @@ Object.defineProperty(obj2,"name",{
         this._name = val+"_haha";
     }
 });
-console.log(obj2.name);//
+console.log(obj2.name);//Daisy_hihi
 obj2.name="jack";
-console.log(obj2.name);//
+console.log(obj2.name);//jack_haha_hihi
