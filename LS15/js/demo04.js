@@ -10,5 +10,8 @@ Person.prototype.sayHi = function () {
 };
 var p1 = new Person(20,"Jack");
 console.log(p1.name);
+//Jack
 console.log(p1.age);
+//20
 p1.sayHi();
+//Hi,i'm Jack
