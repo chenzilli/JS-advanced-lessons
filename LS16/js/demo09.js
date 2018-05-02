@@ -14,6 +14,7 @@ function Student(name,age,id){
 Student.prototype.__proto__ = Person.prototype;
 var s1 = new Student("xxx",22,2017001);
 var s2 = new Student("www",23,2017002);
+//{showName: ƒ, constructor: ƒ}
 
 
 //JS实现继承的形式 二
@@ -34,3 +35,9 @@ Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 var s1 = new Student("xxx",22,2017001);
 var s2 = new Student("www",23,2017002);
+/*
+ƒ Student(name,age,id){
+    Person.call(this,name,age);
+    this.id = id;
+}
+*/

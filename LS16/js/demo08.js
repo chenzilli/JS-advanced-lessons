@@ -20,11 +20,15 @@ var s2 = new Student(2017002);
 
 //测试如下代码，思考为什么，这样的继承有什么弊端
 console.log(s1.name,s1.age,s1.id);
+//Mike 22 2017001
 console.log(s2.name,s2.age,s2.id);
+//Mike 22 2017002
 s1.__proto__.name = "Jack";
 console.log(s2.name);
+//Jack
 s2.__proto__.__proto__.age = 99;
 console.log(s2.age);
+//99
 
 //如何给每个student对象单独添加自身属性name和age，内存是否浪费
 s1.name = "Bill";

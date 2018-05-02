@@ -9,9 +9,11 @@ BaseClass.prototype.f2 = function () {
 BaseClass.f1 = function(){//定义静态方法
     console.log("This is a static method ");
 };
-BaseClass.f1();//This is a static method
+BaseClass.f1();
+//This is a static method
 var instance1 = new BaseClass();
-instance1.f2();//This is a prototype method
+instance1.f2();
+//This is a prototype method
 
 
 //思考下述案例 静态方法
@@ -23,10 +25,14 @@ BaseClass.f1 = function(){
 Class2.f2 = function(){
     console.log(" Class2 ' s static method");
 };
-BaseClass.f1();//BaseClass ' s static method
-BaseClass.f2();//Class2 ' s static method
-Class2.f1();//BaseClass ' s static method
-Class2.f2();//Class2 ' s static method
+BaseClass.f1();
+//BaseClass ' s static method
+BaseClass.f2();
+//Class2 ' s static method
+Class2.f1();
+//BaseClass ' s static method
+Class2.f2();
+//Class2 ' s static method
 console.log(BaseClass === Class2);
 
 
@@ -36,12 +42,16 @@ BaseClass.prototype.method1 = function(){
     console.log("1 This is a instance method ");
 };
 var instance1 = new BaseClass();
-instance1.method1();//This is a instance method
+instance1.method1();
+//1 This is a instance method 
+//This is a instance method
 
 instance1.method1 = function(){
     console.log("2 This is a instance method too ");
 };
-instance1.method1();//This is a instance method too 覆盖了原型的方法
+instance1.method1();
+//2 This is a instance method too 
+//This is a instance method too 覆盖了原型的方法
 
 
 // 思考下述实例
