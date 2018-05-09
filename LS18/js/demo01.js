@@ -91,4 +91,7 @@ var tempArr = data.map((x)=>{return x-average;});
 total = 0;
 total = tempArr.map((x)=>{return x*x;}).reduce((x,y)=>{return x+y;});
 var stddev = Math.sqrt(total/(data.length-1));
+
+//16
+
 */
