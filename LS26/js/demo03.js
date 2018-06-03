@@ -26,10 +26,15 @@ var Observer = function(name){
         console.log('i am '+name+',and i get the message: '+msg);
     };
 };
+//i am a,and i get the message: hello
 var sub = new Subject()
 sub.attach(new Observer('a'));
+//i am b,and i get the message: hello
 sub.attach(new Observer('b'));
+//6
 sub.notify('hello');
+//i am c,and i get the message: world!
+
 //sub.print();
 
 setTimeout(function(){

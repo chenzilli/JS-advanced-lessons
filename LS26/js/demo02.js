@@ -10,6 +10,8 @@ var newArray1 = arr1.map(function (a) {
     return a*a;
 });
 console.log("newArray1:",newArray1);
+//arr1: (5) [1, 3, 5, 7, 9]
+//newArray1: (5) [1, 9, 25, 49, 81]
 
 var arr2= [1,3,5,7,9];
 console.log("arr2:",arr2);
@@ -17,6 +19,8 @@ var newArray2 = arr2.filter(function (a) {//产生新数组，新数组的元素
     return (a>2&&a<8)?true:false;
 });
 console.log("newArray2:",newArray2);
+//arr2: (5) [1, 3, 5, 7, 9]
+//newArray2: (3) [3, 5, 7]
 
 // 案例二 异步执行的回调
 var LTimeOperation = function(taskID){
@@ -38,6 +42,23 @@ for(var i = 0;i<5;i++){
     var task = new LTimeOperation(i);
     task.go(f2);
 }
+/*Start LTimeOperation #0
+Start LTimeOperation #1
+Start LTimeOperation #2
+Start LTimeOperation #3
+Start LTimeOperation #4
+undefined
+task #3 cost 534 ms.
+this is f2, i am callback!
+task #2 cost 591 ms.
+this is f2, i am callback!
+task #0 cost 624 ms.
+this is f2, i am callback!
+task #1 cost 1839 ms.
+this is f2, i am callback!
+task #4 cost 2518 ms.
+this is f2, i am callback!
+*/
 
 
 // Part22222222222222  事件触发与事件监听

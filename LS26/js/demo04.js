@@ -55,6 +55,15 @@ txt.onkeyup = function () {
     //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//post需增加
     xhr.send();
 };
+/*ƒ () {
+    //思考创建了多少个xhr对象，每个对象都是单独请求的么，如果将下一行提到函数外会如何
+    //对应读写DOM操作，有什么区别
+    var xhr = new XMLHttpRequest();
+    if (!xhr) {
+        console.log("xhr 创建失败！！");
+    }
+    xhr.onreadystatechange = fu…
+*/
 
 
 
