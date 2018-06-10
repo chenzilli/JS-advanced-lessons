@@ -4,8 +4,10 @@
 // ES6中 let和const 不进行变量提升特性
 //var 声明变量
 console.log(a);
+//undefined
 var a = 1;
 console.log(a);
+//1
 
 //预解析 上述代码等效于
 var a;
@@ -24,9 +26,11 @@ function f() {
 f();
 
 //let和const不存在变量提升
-console.log(a);//报错
+console.log(a);
+//报错
 let a = 2;
 console.log(a);
+//2
 
 
 

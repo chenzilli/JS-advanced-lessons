@@ -7,12 +7,14 @@
     var a = 23;
 }
 console.log(a);//由于没有块作用域，a可以正常输出
+//23
 
 //例2
 for(var i=0;i<5;i++){
     //do somethings
 }
 console.log("i:",i);//此处i依然存在
+//i:5
 
 
 //例3 通过var声明的变量，由于没有块作用域，容易造成变量污染

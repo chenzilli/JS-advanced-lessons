@@ -4,20 +4,24 @@
 //对象的解构赋值
 var { foo1, bar1 } = { foo1: "aaa", bar1: "bbb" };
 console.log(foo1,bar1);
+//aaa bbb
 
 // 对象的解构与数组有一个重要的不同。\
 // 数组的元素是按次序排列的，变量的取值由它的位置决定
 // 而对象的属性没有次序，变量必须与属性同名，才能取到正确的值
 var { bar2, foo2 } = { foo2: "ccc", bar2: "ddd" };//顺序不同，没关系
 console.log(foo2,bar2);
+//ccc ddd
 
 var { baz3 } = { foo3: "ccc", bar3: "ddd" };
 console.log(baz3);
+//undefined
 
 ////////////////////////////////////////////////////
 //左侧为键值对时,注意键值对赋值时的对应关系
 var { foo4: baz4 } = { foo4: 'aaa', bar4: 'bbb' };
-console.log(baz4);// "aaa"
+console.log(baz4);
+// "aaa"
 
 ////////////////////////////////////////////////////
 let obj1 = { first: 'hello', last: 'world' };
@@ -47,8 +51,10 @@ var obj2 = {
     ]
 };
 var { p: [x, { y }] } = obj2;
-console.log(x); // "Hello"
-console.log(y); // "World
+console.log(x); 
+// "Hello"
+console.log(y); 
+// "World
 //思考console.log(p);是正常输出还是报错？
 
 ///
@@ -70,24 +76,32 @@ line // 1
 let obj3 = {};
 let arr = [];
 ({ foo7: obj3.prop, bar7: arr[0] } = { foo7: 123, bar7: true });
-console.log(obj3);// {prop:123}
-console.log(arr);// [true]
+console.log(obj3);
+// {prop:123}
+console.log(arr);
+// [true]
 
 //对象的解构也可以指定默认值。
 var {x2 = 3} = {};
-console.log(x2); // 3
+console.log(x2); 
+// 3
 
 var {x3, y3 = 5} = {x3: 1};
-console.log(x3); // 1
-console.log(y3); // 5
+console.log(x3); 
+// 1
+console.log(y3);
+ // 5
 
 var {x4:y4 = 3} = {};
-console.log(y4); // 3
+console.log(y4); 
+// 3
 
 var {x5:y5 = 3} = {x5: 5};
-console.log(y5); // 5
+console.log(y5); 
+// 5
 var { message: msg = 'Something went wrong' } = {};
-console.log(msg); // "Something went wrong"
+console.log(msg); 
+// "Something went wrong"
 
 
 

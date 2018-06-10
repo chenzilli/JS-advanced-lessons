@@ -6,6 +6,7 @@
 function f() {
     console.log("outside")
 };
+//outside
 
 {
     f();
@@ -13,6 +14,8 @@ function f() {
         function f() {console.log("inside");}
     }
 }
+//ƒ f() {console.log("inside");}
+
 // 注意：不同的环境，存在兼容性问题
 // 考虑到环境导致的行为差异太大，应该避免在块级作用域内声明函数
 // 如果确实需要，也应该写成函数表达式，而不是函数声明语句
