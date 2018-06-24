@@ -1,9 +1,5 @@
-/**
- * Created by qile on 2017/8/14.
- */
-//Part 111111111111111111111111111111111111111
 var s1 = new Set([1,2,3,4,5,5,6,2,2]);
-console.log(s1);
+console.log(s1);//set(6)[1,2,3,4,5,6]
 
 var s2 = new Set();
 [2, 3, 5, 4, 5, 2, 2].map(x => s2.add(x));
@@ -63,10 +59,11 @@ console.log(...(new Set([1, 2, 3, 4, 5])));//1, 2, 3, 4, 5
 
 //关于Set的遍历方法
 var set = new Set(['red', 'green', 'blue']);
-console.log(typeof set.keys());//注意是什么类型，是否可迭代，是否可用for...of遍历
+console.log(typeof set.keys());//注意是什么类型，是否可迭代，是否可用for...of遍历  返回值为一个对象
 console.log(typeof set.values());
 console.log(typeof set.entries());
 
+//keys方法、values方法、entries方法返回的都是遍历器对象
 for (var item of set.keys()) {
     console.log(item);
 }
@@ -98,9 +95,6 @@ set.forEach((value, key) => console.log(value * 2) );
 // 4
 // 6
 
-var arr = [3, 5, 2, 2, 5, 5];
-var unique = [...new Set(arr)];
-// [3, 5, 2]
 //而且，数组的map和filter方法也可以间接用于Set了，通过...转成数组后调用后再生成set
 var set = new Set([1, 2, 3]);
 set = new Set([...set].map(x => x * 2));
@@ -108,3 +102,14 @@ set = new Set([...set].map(x => x * 2));
 var set = new Set([1, 2, 3, 4, 5]);
 set = new Set([...set].filter(x => (x % 2) == 0));
 // 返回Set结构：{2, 4}
+
+
+// set应用案例 并集、交集
+let a = new Set([1, 2, 3]);
+let b = new Set([4, 3, 2]);
+// 并集
+let union = new Set([...a, ...b]);
+// Set {1, 2, 3, 4}
+// 交集
+let intersect = new Set([...a].filter(x => b.has(x)));
+// set {2, 3}

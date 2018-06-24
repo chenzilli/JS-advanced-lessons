@@ -1,7 +1,3 @@
-/**
- * Created by qile on 2017/8/14.
- */
-//Part111111111111111111111111
 //遍历实例一
 var obj = {};
 var a = Symbol('a');
@@ -39,7 +35,6 @@ console.log(Symbol.for("bar") === Symbol.for("bar"));// true
 console.log(Symbol("bar") === Symbol("bar"));// false
 console.log(Symbol.for("bar") === Symbol("bar"));// false
 
-
 //Symbol.keyFor方法返回一个已登记的Symbol类型值的key。
 var s1 = Symbol.for("foo");
 console.log(Symbol.keyFor(s1)); // "foo"
@@ -48,8 +43,8 @@ console.log(Symbol.keyFor(s2)); // undefined
 
 //思考：
 var s3 = Symbol(Symbol.keyFor(s1));
-console.log(s1 === s3);
-console.log(s2 === s3);
+console.log(s1 === s3);//false
+console.log(s2 === s3);//false
 var s4 = Symbol.for(Symbol.keyFor(s1));
-console.log(s1 === s4);
-console.log(s2 === s4);
+console.log(s1 === s4);//true
+console.log(s2 === s4);//false

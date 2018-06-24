@@ -1,7 +1,3 @@
-/**
- * Created by qile on 2017/8/14.
- */
-//Part111111111111111
 //由于每一个Symbol值都是不相等的，这意味着Symbol值可以作为标识符，用于对象的属性名，
 //就能保证不会出现同名的属性。
 //这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。
@@ -28,7 +24,7 @@ var obj = {
     [aSymbol]: 'Hello!'
 };
 Object.defineProperty(obj, Symbol("abc"), { value: 'World!' });
-console.log(obj);//思考obj对象有几个属性？
+console.log(obj);//思考obj对象有几个属性？两个
 
 //Part22222222222222222
 //上面代码通过方括号结构和Object.defineProperty，将对象的属性名指定为一个Symbol值。
@@ -48,8 +44,8 @@ var obj = {
     [myS1]:123,
     [myS2]:456
 };
-console.log(obj[myS1],obj[Symbol("xx")]);//输出什么？如何解释Symbol
-console.log(obj[myS2],obj["xx"]);
+console.log(obj[myS1],obj[Symbol("xx")]);//输出什么？如何解释Symbol 123 undefine
+console.log(obj[myS2],obj["xx"]);//456  456
 // console.log(obj["myS1"]);
 // console.log(obj["myS2"]);
 
@@ -57,16 +53,16 @@ console.log(obj[myS2],obj["xx"]);
 // 如果不用[]的话相当于使用s对应的字符串定义属性
 let s = Symbol();
 let obj = {
-    [s]: function (arg) {}
+    [s]: function (arg) {console.log("xx");}
 };
 obj[s](123);
 // 上面代码中，如果s不放在方括号中，该属性的键名就是字符串s，而不是s所代表的那个Symbol值。
 
 // 采用增强的对象写法，上面代码的obj对象可以写得更简洁一些
 let obj = {
-    [s](arg) { }
+    [s](arg) {console.log("xx");}
 };
-//上述代码写方法可以，思考下述写法是否会报错，为什么？
+
 // 回顾ES6对象属性的表达式定义方法和ES6对象的简洁表示法，对于属性和方法定义的简洁表示法
 //还有一点需要注意，Symbol值作为属性名时，该属性还是公开属性，不是私有属性
 

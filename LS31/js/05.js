@@ -1,7 +1,3 @@
-/**
- * Created by qile on 2017/8/14.
- */
-//Part 111111111111111111111111
 var m = new Map();
 var o = {p: 'Hello World'};
 m.set(o, 'content');
@@ -30,6 +26,10 @@ var items = [
 ];
 var map = new Map();
 items.forEach(([key, value]) => map.set(key, value));
+//等效于
+// items.forEach(function(v){
+//  map.set(v[0],v[1]);
+// });
 
 //
 // 如果对同一个键多次赋值，后面的值将覆盖前面的值。
@@ -47,11 +47,11 @@ new Map().get('asfddfsasadf');
 var map = new Map();
 map.set(['a'], 555);
 map.get(['a']); // undefined
-
+//上述的两个键是数组，引用，不相等
 //思考：
 var map = new Map();
 map.set('a', 555);
-map.get('a'); // 输出什么？
+map.get('a'); // 输出什么？ 555
 
 //
 var map = new Map();
@@ -73,6 +73,7 @@ map.set(NaN, 123);
 map.get(NaN); // 123
 map.set(-0, 123);
 map.get(+0); // 123
+
 
 
 //Part2222222222222222222222222222222222222222 Map相关方法
@@ -150,9 +151,9 @@ for (let [key, value] of map.entries()) {
     console.log(key, value);
 }
 // 等同于使用map.entries()
-for (let [key, value] of map) {
-    console.log(key, value);
-}
+// for (let [key, value] of map) {
+//     console.log(key, value);
+// }
 
 /////////////////////////////////////////////
 //Map结构转为数组结构，比较快速的方法是结合使用扩展运算符（...）。
@@ -190,7 +191,8 @@ map.forEach(function(value, key, map) {
 });
 
 
-//思考：
+
+//扩展内容，补充思考：
 //Map与其他数据结构对象的转换，参考电子书13.3.4章节
 //Map转为数组
 //前面已经提过，Map转为数组最方便的方法，就是使用扩展运算符（...）。
@@ -226,7 +228,3 @@ function objToStrMap(obj) {
 }
 objToStrMap({yes: true, no: false});
 // [ [ 'yes', true ], [ 'no', false ] ]
-
-
-
-
